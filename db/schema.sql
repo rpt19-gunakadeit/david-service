@@ -5,8 +5,9 @@ CREATE DATABASE fec;
 USE fec;
 
 CREATE TABLE product_description (
-    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    description varchar(500) NOT NULL
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    description VARCHAR(500) NOT NULL,
+    title VARCHAR(100) NOT NULL
 );
 
 /*  Execute this file from the command line by typing:
@@ -130,3 +131,6 @@ INSERT into product_description (description) VALUES ("Snkrs explore innovate co
 INSERT into product_description (description) VALUES ("Knit trancendant reserved equality lab fly swoosh. Style culture fly pattern breaking innovation future. Collection court homage max brand sport stength tech.");
 INSERT into product_description (description) VALUES ("Attack sneakers breaking reserved mens retailers ignite. Shilouette training sport access, stealth ignite breaking flight explore running access. Explore mens sneakers cortez importance force transformation.");
 INSERT into product_description (description) VALUES ("Fly snkrs transformation run ethos clothing court. Style gear retro training, running world ultra style future womens. Skate stealth attack ultra flyknit, access shilouette hurache unlock cortez member vapormax running future.");
+
+
+
