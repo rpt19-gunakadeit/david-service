@@ -1,7 +1,6 @@
-var words = "culture fly style essentials legendary global icon premium gear swoosh ignite virgil clothing vapormax exclusive flight pattern run tech kickoff world homage air explore collection knit reserved limitless shilouette innovation access versatile member sport equality offwhite ethos attack zoom stealth quick force ultra womens flyknit upper custom max pack mens running lab launch advance hurache retro classic training significant inspired breaking snkrs jordan importance futuristic brand heritage strength future cortez retailers special trancendant transformation court strike available athlete skate stength finesse innovate unlock sneakers";
+var words = "culture fly style essentials legendary global icon premium gear swoosh ignite virgil clothing vapormax exclusive flight pattern run tech kickoff world homage air explore collection knit reserved limitless shilouette innovation access versatile member sport equality offwhite ethos attack zoom stealth quick force ultra womens flyknit upper custom max pack mens running lab launch advance hurache retro classic training significant inspired breaking snkrs jordan importance futuristic brand heritage strength future cortez retailers special trancendant transformation court strike available athlete skate stength finesse innovate unlock sneakers"
+.split(' ');
 
-
-words = words.split(' ');
 
 var randomNum = (min = 0, max = min) => {
     return min + Math.floor(Math.random() * ((max + 1) - min));
@@ -54,7 +53,27 @@ var nikeIpsumGenerator = (num, minNumSent, maxNumSent, minNumWords, maxNumWords,
     return ipsums;
 }
 
+var insertGenerator = (numOfInserts, table, valueNames, ipsums) => {
+    var inserts = [];
+    
+    valueNames = `(${valueNames.join(', ')})`;
+
+    for (var i = 0; i < numOfInserts; i++) {
+
+        var values = [];
+        for (var j = 0; j < ipsums.length; j++) {
+            values.push(`"${ipsums[j][i]}"`);
+        }
+        values = `(${values.join(', ')})`;
+
+        inserts.push(`INSERT INTO ${table} ${valueNames} VALUES ${values}`);
+    }
+
+    return inserts;
+}
 
 
-console.log(nikeIpsumGenerator(100, 1, 2, 7, 10, 1));
-console.log(nikeIpsumGenerator(1, 1, 1, 7, 10, 0));
+var descriptions = nikeIpsumGenerator(100, 1, 2, 7, 10, 1);
+var titles = nikeIpsumGenerator(100, 1, 1, 5, 7, 0);
+
+console.log(insertGenerator(100, 'product_description', ['description', 'title'], [descriptions, titles]));
