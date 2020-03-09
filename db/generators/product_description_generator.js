@@ -62,7 +62,13 @@ var insertGenerator = (numOfInserts, table, valueNames, ipsums) => {
 
         var values = [];
         for (var j = 0; j < ipsums.length; j++) {
-            values.push(`"${ipsums[j][i]}"`);
+            var value = ipsums[j][i];
+            if (typeof value === 'string') {
+                values.push(`"${ipsums[j][i]}"`);
+            } else {
+                values.push(`${ipsums[j][i]}`);
+            }
+            
         }
         values = `(${values.join(', ')})`;
 
@@ -72,8 +78,41 @@ var insertGenerator = (numOfInserts, table, valueNames, ipsums) => {
     return inserts;
 }
 
+var generateProductIds = (numOfProducts, minNumOfIds, maxNumOfIds) => {
+    var productIds = [];
+    for (var i = 0; i < numOfProducts; i++) {
+        var numOfIds = randomNum(minNumOfIds, maxNumOfIds);
+        for (var j = 0; j < numOfIds; j++) {
+            productIds.push(i);
+        }
+    }
+    return productIds;
+}
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//product_descriptions///////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var descriptions = nikeIpsumGenerator(100, 1, 2, 7, 10, 1);
 var titles = nikeIpsumGenerator(100, 1, 1, 5, 7, 0);
 
-console.log(insertGenerator(100, 'product_description', ['description', 'title'], [descriptions, titles]));
+//// console.log(insertGenerator(100, 'product_descriptions', ['description', 'title'], [descriptions, titles]));
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//benefits///////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+var benefits__productIds = generateProductIds(100, 3, 5);
+var numOfBenefits = benefits__productIds.length;
+var benefits_descriptions = nikeIpsumGenerator(numOfBenefits, 1, 1, 6, 8, 0);
+
+// console.log(insertGenerator(numOfBenefits, 'benefits', ['description', 'product_id'], [benefits_descriptions, benefits__productIds]));
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//details////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+var details_productIds = generateProductIds(100, 2, 4);
+var numOfDetails = details_productIds.length;
+var details_descriptions = nikeIpsumGenerator(numOfDetails, 1, 1, 7, 9, 0);
+
+// console.log(insertGenerator(numOfDetails, 'details', ['description', 'product_id'], [details_descriptions, details_productIds]));
+
+

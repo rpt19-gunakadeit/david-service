@@ -4,7 +4,7 @@ CREATE DATABASE fec;
 
 USE fec;
 
-CREATE TABLE product_description (
+CREATE TABLE product_descriptions (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     description VARCHAR(500) NOT NULL,
     title VARCHAR(100) NOT NULL
