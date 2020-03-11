@@ -7,7 +7,10 @@
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {},
+  "scripts": {
+    "seedDB" : "mysql -u root -p < db/schema.sql",
+    "startDB" : "mysql -u root -p"
+  },
   "dependencies": {
     "bluebird": "^3.7.2",
     "lodash": "^4.17.15",

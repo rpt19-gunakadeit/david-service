@@ -4,22 +4,20 @@ const {
 const textBlockGenerator = require('./htmlGenerator');
 
 var insertQueryGenerator = () => {
-    var insertQueries = [];
+    var insertQueries = '';
 
     for (var i = 0; i < 100; i++) {
         var description = nikeIpsumGenerator(1, 2, 6, 8, true);
 
         var textBlock = textBlockGenerator(description);
 
-        var insertQuery = `INSERT INTO product_descriptions (description, textBlock) VALUES ('${description}', '${textBlock}')`;
-
-        insertQueries.push(insertQuery);
+        insertQueries+= `INSERT INTO product_descriptions (description, textBlock) VALUES ('${description}', '${textBlock}');\n`;
     }
 
     return insertQueries;
 }
 
-console.log(insertQueryGenerator());
+module.exports = insertQueryGenerator();
 
 
 
