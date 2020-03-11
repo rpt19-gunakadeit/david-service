@@ -1,4 +1,5 @@
 const words = require('./words');
+const _ = require('lodash');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var randomNum = (min = 0, max = min) => {
@@ -6,7 +7,6 @@ var randomNum = (min = 0, max = min) => {
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var sentenceGenerator = (minNumOfWords, maxNumOfWords, possiblyComma) => {
-    var tempMem_chosenIndexes = [];
     var sentence = '';
     var numOfWords = randomNum(minNumOfWords, maxNumOfWords);
     var placement;
@@ -16,17 +16,15 @@ var sentenceGenerator = (minNumOfWords, maxNumOfWords, possiblyComma) => {
     }
        
     for (var i = 0; i < numOfWords; i++) {  
-        do { var chosenIndex = randomNum(0, words.length - 1); } 
-        while (tempMem_chosenIndexes.indexOf(chosenIndex) > -1);
-
-        tempMem_chosenIndexes.push(chosenIndex);
+        do { 
+            var chosenWord = words[randomNum(0, words.length - 1)]; } 
+        while (_.includes(sentence, chosenWord));
 
         sentence+= i === placement
-            ? words[chosenIndex] + ', ' 
-            : words[chosenIndex] + ' ';
+            ? chosenWord + ', ' 
+            : chosenWord + ' ';
     }
 
-    tempMem_chosenIndexes = [];
     sentence = sentence[0].toUpperCase() + sentence.slice(1, sentence.length - 1) + '. ';
         
     return sentence;

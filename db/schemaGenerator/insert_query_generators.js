@@ -3,7 +3,7 @@ const {
     randomNum } = require('./nike_Ipsum_Generator');
 const textBlockGenerator = require('./htmlGenerator');
 
-var insert_query_generator = () => {
+var insertQueryGenerator = () => {
     var insertQueries = [];
 
     for (var i = 0; i < 100; i++) {
@@ -18,6 +18,8 @@ var insert_query_generator = () => {
 
     return insertQueries;
 }
+
+console.log(insertQueryGenerator());
 
 
 
