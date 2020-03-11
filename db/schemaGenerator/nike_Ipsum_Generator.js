@@ -41,9 +41,9 @@ var paragraphGenerator = (numOfSentences, minNumWords, maxNumWords, possiblyComm
     return paragraph;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-module.exports.nikeIpsumGenerator = (num, minNumSent, maxNumSent, minNumWords, maxNumWords, possiblyComma) => {
+var nikeIpsumGenerator = (minNumSent, maxNumSent, minNumWords, maxNumWords, possiblyComma = false, numOfParagraphs = 1) => {
     var ipsums = [];
-    for(var i = 0; i < num; i++) {
+    for(var i = 0; i < numOfParagraphs; i++) {
         var numOfSentences = randomNum(minNumSent, maxNumSent);
         var paragraph = paragraphGenerator(numOfSentences, minNumWords, maxNumWords, possiblyComma);
         
@@ -52,37 +52,6 @@ module.exports.nikeIpsumGenerator = (num, minNumSent, maxNumSent, minNumWords, m
     return ipsums;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-module.exports.insertGenerator = (numOfInserts, table, valueNames, ipsums) => {
-    var inserts = [];
-    
-    valueNames = `(${valueNames.join(', ')})`;
 
-    for (var i = 0; i < numOfInserts; i++) {
-        var values = [];
-        for (var j = 0; j < ipsums.length; j++) {
-            var value = ipsums[j][i];
-            if (typeof value === 'string') {
-                values.push(`"${ipsums[j][i]}"`);
-            } else {
-                values.push(`${ipsums[j][i]}`);
-            }
-            
-        }
-        values = `(${values.join(', ')})`;
 
-        inserts.push(`INSERT INTO ${table} ${valueNames} VALUES ${values};`);
-    }
-
-    return inserts;
-}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-module.exports.generateRandomAmountForEachProductId = (numOfProducts, minNumOfIds, maxNumOfIds) => {
-    var productIds = [];
-    for (var i = 0; i < numOfProducts; i++) {
-        var numOfIds = randomNum(minNumOfIds, maxNumOfIds);
-        for (var j = 0; j < numOfIds; j++) {
-            productIds.push(i);
-        }
-    }
-    return productIds;
-}
+module.exports = { nikeIpsumGenerator, randomNum };
