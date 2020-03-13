@@ -6,10 +6,10 @@ const queries = require('./../db/queries');
 
 app.use('/product/:id/description', (req, res) => {
     var { id } = req.params;
-
-    queries.getProductDesc()
+    console.log(id, typeof id)
+    queries.getProductDesc(Number(id))
     .then(productDesc => {
-        res.end(productDesc);
+        res.end(JSON.stringify(productDesc));
     })
     
 })

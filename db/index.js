@@ -9,5 +9,12 @@ var db = mysql.createConnection({
 
 db =  Promise.promisifyAll(db);
 
+db.connectAsync().
+then(() => {
+    console.log('connected to mySQL');
+    return db.queryAsync(`USE nike`);
+})
 
-module.exports.db = db;
+
+
+module.exports = db;
