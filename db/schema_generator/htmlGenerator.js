@@ -13,11 +13,7 @@ var headerAndLisGenerator = (headerName) => {
     }
 
     var textBlock = 
-    `<div>
-    ${header}
-    ${lis}
-    </div>
-    `;
+    `<div>${header}${lis}</div>`;
 
     return textBlock;
 }
@@ -32,11 +28,7 @@ var textBlockGenerator = (description) => {
     var details = headerAndLisGenerator('Details');
 
     textBlock = 
-    `<h1>${title}</h1>
-     <p>${description}</p>
-     ${benefits}
-     ${details}
-     `;
+    `<h1>${title}</h1><p>${description}</p>${benefits}${details}`;
 
      return textBlock;
 

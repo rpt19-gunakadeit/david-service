@@ -24,3 +24,6 @@ coverage
 build/
 dist/
 
+# DB Password
+db_password.js
+
