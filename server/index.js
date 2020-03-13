@@ -1,16 +1,16 @@
 const express = require('express');
 const app = express();
 const port = 5000;
-//const queries = require('./../db/queries');
+const queries = require('./../db/queries');
 
 
 app.use('/product/:id/description', (req, res) => {
     var { id } = req.params;
 
-    // queries.getProductDesc()
-    // .then(productDesc => {
-    //     res.end(productDesc);
-    // })
+    queries.getProductDesc()
+    .then(productDesc => {
+        res.end(productDesc);
+    })
     
 })
 
