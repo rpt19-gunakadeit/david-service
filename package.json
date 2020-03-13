@@ -8,10 +8,12 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "start": "nodemon server",
     "seedDB" : "mysql -u root -p < db/schema.sql",
     "startDB" : "mysql -u root -p"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "bluebird": "^3.7.2",
     "lodash": "^4.17.15",
     "mysql": "^2.18.1"
