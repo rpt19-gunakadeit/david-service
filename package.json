@@ -10,15 +10,18 @@
   "scripts": {
     "start": "nodemon server",
     "seedDB": "mysql -u root -p < db/schema.sql",
-    "startDB": "mysql -u root -p"
+    "startDB": "mysql -u root -p",
+    "webpack": "webpack"
   },
   "dependencies": {
-    "express": "^4.17.1",
     "bluebird": "^3.7.2",
+    "express": "^4.17.1",
     "lodash": "^4.17.15",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "webpack": "^4.42.0"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "webpack-cli": "^3.3.11"
   }
 }
