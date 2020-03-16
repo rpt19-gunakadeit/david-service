@@ -1,4 +1,1 @@
-import { logWords } from '../client/ProductDescription';
-
-
-logWords();
+alert('hello');
