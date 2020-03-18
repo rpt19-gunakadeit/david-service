@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './main.css';
 
 class App extends React.Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class App extends React.Component {
             productDescription: '',
             textBlock: ''
         }
+        var modal = document.getElementById('modal');
     }
 
     componentDidMount() {
@@ -26,6 +28,10 @@ class App extends React.Component {
         })
     }
 
+    openModal() {
+      modal.style.display = "block";
+    }
+
     render() {
         return (
             <div>
@@ -34,7 +40,11 @@ class App extends React.Component {
                     <li>Shown: {this.state.productName}</li>
                     <li>Style: {this.state.styleName}</li>
                 </ul>
-                <button><span>Read more</span></button>
+                <button onClick={this.openModal}><span>Read more</span></button>
+                <div id="modal">
+                    <p>{this.state.productDescription}</p>
+                    <p>{this.state.textBlock}</p>
+                </div>
             </div>
         )
     }
