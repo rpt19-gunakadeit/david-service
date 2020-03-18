@@ -1,6 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-
-class ProductDescription extends React.Component {
+class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,11 +15,12 @@ class ProductDescription extends React.Component {
     componentDidMount() {
         fetch('http://localhost:5000/product/1/description')
         .then(response => {
-            response.json();
+            return response.json();
         })
         .then(data => {
+            console.log(data);
             this.setState({
-                productDescription: data.productDescription,
+                productDescription: data.description,
                 textBlock: data.textBlock
             })
         })
@@ -27,7 +29,7 @@ class ProductDescription extends React.Component {
     render() {
         return (
             <div>
-                <p>{this.state.description}</p>
+                <p>{this.state.productDescription}</p>
                 <ul>
                     <li>Shown: {this.state.productName}</li>
                     <li>Style: {this.state.styleName}</li>
@@ -37,3 +39,5 @@ class ProductDescription extends React.Component {
         )
     }
 }
+
+ReactDOM.render(<App />, document.getElementById('root'));
