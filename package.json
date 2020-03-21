@@ -11,7 +11,8 @@
     "start": "nodemon server",
     "seedDB": "mysql -u root -p < db/schema.sql",
     "startDB": "mysql -u root -p",
-    "react-dev": "webpack -d --watch"
+    "react-dev": "webpack -d --watch",
+    "test": "jest"
   },
   "dependencies": {
     "@babel/core": "^7.8.7",
@@ -20,6 +21,7 @@
     "bluebird": "^3.7.2",
     "css-loader": "^3.4.2",
     "express": "^4.17.1",
+    "jest": "^25.1.0",
     "lodash": "^4.17.15",
     "mysql": "^2.18.1",
     "react": "^16.13.0",
