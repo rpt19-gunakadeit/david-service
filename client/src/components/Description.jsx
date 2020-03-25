@@ -1,18 +1,11 @@
-import React from 'react';
 import ReadMoreModal from './ReadMoreModal.jsx';
 import '../main.css';
 
-
-// const STATUS = {
-//     HOVERED: 'hovered',
-//     NORMAL: 'normal',
-// };
-
-class App extends React.Component {
+class Description extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            productName: 'Nike Blazer', //default for now
+            productName: 'Nike Blazers', //default for now
             styleName: 'Gray/Blue', //default for now
             productDescription: '',
             textBlock: '',
@@ -91,59 +84,9 @@ class App extends React.Component {
             </div>
         )
     }
-    // constructor(props) {
-    //     super(props);
-    
-    //     this._onMouseEnter = this._onMouseEnter.bind(this);
-    //     this._onMouseLeave = this._onMouseLeave.bind(this);
-    
-    //     this.state = {
-    //       class: STATUS.NORMAL,
-    //       test: true
-    //     };
-    //   }
-    
-    //   _onMouseEnter() {
-    //     this.setState({class: STATUS.HOVERED});
-    //   }
-    
-    //   _onMouseLeave() {
-    //     this.setState({class: STATUS.NORMAL});
-    //   }
 
-    //   toggleIsShown() {
-    //       this.setState({test: !this.state.test});
-    //   }
-    
-    //   render() {
-    //     return (
-    //         <div>
-    //             <a
-    //                 className={this.state.class}
-    //                 href={this.props.page || '#'}
-    //                 onClick={this._onMouseEnter}
-    //                 onMouseEnter={this._onMouseEnter}
-    //                 onMouseLeave={this._onMouseLeave}
-    //             >
-    //                 {this.props.children}
-    //             </a>
-                
-    //             <a
-    //                 className={this.state.test}
-    //                 onClick={this.toggleIsShown}
-    //             >
-    //                 hello
-    //              </a>
-                
-    //             <div>Hello I am David</div>
-    //       </div>
-        
-    //     );
-    //   }
 }
 
 
-// ReactDOM.render(<App productId={1} style={2}/>, document.getElementById('root'));
-// I suppose this id can be from the url or upper level component?
 
-export default App;
+window.Description = Description;

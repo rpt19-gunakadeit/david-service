@@ -1,5 +1,3 @@
-import React from 'react';
-
 var ReadMoreModal = (props) => {
     return (
         <div className='modal pt4-sm pb4-sm'>
