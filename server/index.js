@@ -4,7 +4,6 @@ const port = 5000;
 const queries = require('./../db/queries');
 
 app.use(express.static('./public'))
-app.use(express.static('./client/dist'))
 
 app.use('/product/:id/description', (req, res) => {
     var { id } = req.params;
