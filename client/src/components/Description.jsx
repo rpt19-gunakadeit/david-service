@@ -19,12 +19,14 @@ class Description extends React.Component {
     componentDidMount() {
         
         //fetching my service
-        fetch(`http://localhost:5000/product/${this.props.productId}/description`)
+        fetch(`http://localhost:5000/product/${this.props.productId}/description/`,
+        { 'Content-Type': 'text/plain'})
         .then(response => {
             //return response.json();
             return response.json();
         })
         .then(data => {
+            console.log('data', data);
             this.setState({
                 productDescription: data.description,
                 textBlock: data.textBlock

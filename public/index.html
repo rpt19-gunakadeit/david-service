@@ -8,16 +8,20 @@
 </head>
 <body>
     <div id="root"></div>
-
+    
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="http://localhost:5000/dist/bundle.js"></script>
+    <script src="http://localhost:5000/t/:product/:style/dist/bundle.js"></script>
    
    
     <script>
+        var path = window.location.pathname.split('/');
+        var productId = path[2]; 
+        var styleId = path[3]; 
+
         
         ReactDOM.render(
-            React.createElement(Description, {productId: 1}),
+            React.createElement(Description, { productId }),
             document.getElementById('root')
         )
     </script>
