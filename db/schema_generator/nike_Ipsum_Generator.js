@@ -25,17 +25,17 @@ var sentenceGenerator = (minNumOfWords, maxNumOfWords, possiblyComma) => {
             : chosenWord + ' ';
     }
 
-    sentence = sentence[0].toUpperCase() + sentence.slice(1, sentence.length - 1) + '. ';
+    sentence = sentence[0].toUpperCase() + sentence.slice(1, sentence.length - 1) + '.';
         
     return sentence;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var paragraphGenerator = (numOfSentences, minNumWords, maxNumWords, possiblyComma) => {
-    var paragraph = '';
+    var paragraph = [];
     for(var i = 0; i < numOfSentences; i++) {
-        paragraph+= sentenceGenerator(minNumWords, maxNumWords, possiblyComma);
+        paragraph.push(sentenceGenerator(minNumWords, maxNumWords, possiblyComma));
     }
-    paragraph = paragraph.substring(0, paragraph.length - 1);
+    paragraph = paragraph.join(' ');
     return paragraph;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -52,4 +52,5 @@ var nikeIpsumGenerator = (minNumSent, maxNumSent, minNumWords, maxNumWords, poss
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-module.exports = { nikeIpsumGenerator, randomNum };
+module.exports = { randomNum,
+                   sentenceGenerator,paragraphGenerator,nikeIpsumGenerator  };
