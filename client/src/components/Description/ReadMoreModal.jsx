@@ -1,6 +1,10 @@
 var ReadMoreModal = (props) => {
+    var modalToggling = props.modal ? 
+                        'modal pt4-sm pb4-sm toggle-modal'
+                       :'modal pt4-sm pb4-sm';
+                    
     return (
-        <div className='modal pt4-sm pb4-sm'>
+        <div className={modalToggling}>
             <div className='ncss-container'>
                 <button onClick={props.toggleModal} className='bg-white'>
 
