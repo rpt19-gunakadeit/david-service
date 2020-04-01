@@ -13,7 +13,7 @@ app.use('/t/:product/:style', express.static('./public'))
 app.use('/product/:id/description', (req, res) => {
     var { id } = req.params;
     id = Number(id);
-
+    console.log(id);
     queries.getProductDesc(id)
     .then(productDesc => {
         res.header("Access-Control-Allow-Origin", "*");

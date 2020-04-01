@@ -72,3 +72,25 @@ button {
   overflow-y: scroll;
   height: 100%;
 }
+
+
+.ncss-cta-primater-dark.underline {
+  box-shadow: inset 0 -1px 0 0 #111;
+  padding-bottom: 2px;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+}
+
+.ncss-cta-primater-dark {
+  color: #111;
+  padding: 0;
+}
+
+[class*=ncss-cta] {
+  background: 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 500;
+}
