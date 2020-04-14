@@ -1,12 +1,14 @@
 const mysql = require('mysql');
 const Promise = require('bluebird');
-const password = require('./db_password.js');
-const database = 'fec';
+// const password = require('./db_password.js');
+// const database = 'fec';
 
 
 var db = mysql.createConnection({
-    user: 'nodeuser',
-    password
+    host: 'essentialsdb.cdrgzta9njwc.us-west-1.rds.amazonaws.com',
+    user: 'admin',
+    password: 'password',
+    port: 3306
 })
 
 db =  Promise.promisifyAll(db);
