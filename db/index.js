@@ -19,8 +19,6 @@ then(() => {
     return db.queryAsync(`USE nike`);
 })
 
-
-
 module.exports = db;
 
 
