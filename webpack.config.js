@@ -5,9 +5,12 @@ const DIST_DIR = path.join(__dirname, '/public/dist');
 module.exports = {
     mode: "production",
     //devtool: 'none', 
-    entry: `${SRC_DIR}/Description.jsx`,
+    entry: {
+        description: `${SRC_DIR}/Description/Description.jsx`,
+        carousel: `${SRC_DIR}/Carousel/Carousel.jsx`
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name]Bundle.js',
         path: DIST_DIR,
         libraryTarget: 'var',
         library: 'library'

@@ -8,7 +8,11 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/t/:product/:style', express.static('./public'))
+app.use('/t/:product/:style', express.static('./public/description'));
+app.use('/t/:product/:style', express.static('./public/dist'));
+app.use('/carousel', express.static('./public/carousel'));
+app.use('/carousel', express.static('./public/dist'));
+
 
 app.use('/product/:id/description', (req, res) => {
     var { id } = req.params;
