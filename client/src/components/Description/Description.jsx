@@ -23,7 +23,7 @@ class Description extends React.Component {
         console.log('.', this.state.productId)
         //fetching my service
         //http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com
-        fetch(`http://localhost:5000/product/${this.state.productId}/description/`,
+        fetch(`http://54.241.130.11:5000/product/${this.state.productId}/description/`,
         { 'Content-Type': 'text/plain'})
         .then(response => {
             //return response.json();
