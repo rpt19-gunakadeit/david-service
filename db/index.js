@@ -5,10 +5,8 @@ const Promise = require('bluebird');
 
 
 var db = mysql.createConnection({
-    host: 'essentialsdb.cdrgzta9njwc.us-west-1.rds.amazonaws.com',
-    user: 'admin',
-    password: 'password',
-    port: 3306
+    user: 'root',
+    password: 'pw',
 })
 
 db =  Promise.promisifyAll(db);
