@@ -20,7 +20,7 @@ class Description extends React.Component {
 
     
     componentDidMount() {
-        console.log('inside Description', this.state.productId)
+        console.log('inside Description', this.state.productId, 'does it log props?', this.props.productId)
     
         fetch(`http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:5000/product/${this.state.productId}/description/`,
         { 'Content-Type': 'text/plain'})
