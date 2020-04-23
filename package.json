@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "nodemon server",
-    "startpm2" : "pm2 start server",
+    "startpm2": "pm2 start server",
     "seedDB": "mysql -u root -p < db/schema.sql",
     "startDB": "mysql -u root -p",
     "build": "webpack -d --watch",
