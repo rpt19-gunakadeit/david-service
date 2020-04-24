@@ -3,13 +3,31 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import App from '../client/src/index.jsx';
+import Description from '../client/src/components/Description/Description.jsx';
 
 Enzyme.configure({adapter: new Adapter() });
 
-describe('App Component', () => {
-    it('ReadMoreModal changes class when top left button is clicked', () => {
-        // const component = renderer.create(<App />);
+describe('Description Component', () => {
+    it('should toggle the classname for ReadMoreModal when ReadMore button is clicked', () => {
+        
+    
+        const wrapper = shallow(<Description />);
+    
+        const text = wrapper.find('div div');
+        expect(text.text()).toBe('Hello I am David');
+    });
+
+    it('asdf', () => {
+       const wrapper = shallow(<MyComponent />);
+       const button = wrapper.find('a .normal');
+       button.simulate('click');
+       const text = wrapper.find('div div');
+       expect
+    })
+})
+
+
+// const component = renderer.create(<App />);
         
         // let tree = component.toJSON();
         // expect(tree).toMatchSnapshot();
@@ -39,20 +57,3 @@ describe('App Component', () => {
         //   // re-rendering
         //   tree = component.toJSON();
         //   expect(tree).toMatchSnapshot();
-    
-        const wrapper = shallow(<App />);
-    
-        const text = wrapper.find('div div');
-        expect(text.text()).toBe('Hello I am David');
-    });
-
-    it('asdf', () => {
-       const wrapper = shallow(<MyComponent />);
-       const button = wrapper.find('a .normal');
-       button.simulate('click');
-       const text = wrapper.find('div div');
-       expect
-    })
-})
-
-

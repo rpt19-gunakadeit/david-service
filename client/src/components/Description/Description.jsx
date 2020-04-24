@@ -6,8 +6,8 @@ class Description extends React.Component {
         super(props);
         this.state = {
             productId: this.props.productId,
-            productName: 'Nike Blazers', //default for now
-            styleName: 'Gray/Blue', //default for now
+            productName: this.props.productInfo.name, //default for now
+            styleName: this.props.productInfo.styles[this.props.styleId].name, //default for now
             productDescription: '',
             textBlock: '',
             productPrice: 100, //default for now
@@ -20,12 +20,10 @@ class Description extends React.Component {
 
     
     componentDidMount() {
-        console.log('inside Description', this.state.productId, 'does it log props?', this.props.productId)
-    
+        
         fetch(`http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:5000/product/${this.state.productId}/description/`,
         { 'Content-Type': 'text/plain'})
         .then(response => {
-            //return response.json();
             return response.json();
         })
         .then(data => {
@@ -79,7 +77,7 @@ class Description extends React.Component {
                 <p>{this.state.productDescription}</p>
                 <ul>
                     <li>Shown: {this.state.productName}</li>
-                    <li>Style: {this.state.styleName}</li>
+                    <li>Style: {this.state.productInfo.styles[0].name ? this.state.styleName : null}</li>
                 </ul>
                 <button className="ncss-cta-primater-dark underline" onClick={this.toggleModal}><span>Read more</span></button>
     
