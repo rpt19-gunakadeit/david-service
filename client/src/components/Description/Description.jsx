@@ -76,8 +76,8 @@ class Description extends React.Component {
 
                 <p>{this.state.productDescription}</p>
                 <ul>
-                    <li>Shown: {this.state.productName}</li>
-                    <li>Style: {this.state.styleName}</li>
+                    <li>Shown: {this.props.productInfo.name}</li>
+                    <li>Style: {this.props.styleInfo.name}</li>
                 </ul>
                 <button className="ncss-cta-primater-dark underline" onClick={this.toggleModal}><span>Read more</span></button>
     
