@@ -6,12 +6,12 @@ class Description extends React.Component {
         super(props);
         this.state = {
             productId: this.props.productId,
-            productName: this.props.productInfo.name, //default for now
-            styleName: this.props.productInfo.styles[this.props.styleId].name, //default for now
+            productName: this.props.productInfo.name,
+            styleName: this.props.styleInfo.name,
             productDescription: '',
             textBlock: '',
             productPrice: 100, //default for now
-            imageUrl: 'https://static.nike.com/a/images/t_default/eric5lwitzffpoisq0rj/blazer-mid-77-vintage-shoe-flCCX4.jpg', //default for now,
+            imageUrl: 'https://static.nike.com/a/images/t_default/eric5lwitzffpoisq0rj/blazer-mid-77-vintage-shoe-flCCX4.jpg',
             modal: false
         }
         this.toggleModal = this.toggleModal.bind(this);
@@ -77,7 +77,7 @@ class Description extends React.Component {
                 <p>{this.state.productDescription}</p>
                 <ul>
                     <li>Shown: {this.state.productName}</li>
-                    <li>Style: {this.props.productInfo.styles[0].name ? this.state.styleName : null}</li>
+                    <li>Style: {this.state.styleName}</li>
                 </ul>
                 <button className="ncss-cta-primater-dark underline" onClick={this.toggleModal}><span>Read more</span></button>
     
