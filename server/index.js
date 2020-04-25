@@ -14,7 +14,7 @@ app.use('/carousel', express.static('./public/carousel'));
 app.use('/carousel', express.static('./public/dist'));
 
 
-app.use('/product/:id/description', (req, res) => {
+app.get('/product/:id/description', (req, res) => {
     var { id } = req.params;
     id = Number(id);
     console.log(id);
@@ -32,3 +32,7 @@ app.listen(port, (err) => {
 
     console.log(`Listening on port ${port} :)`);
 })
+
+
+
+module.exports = app;

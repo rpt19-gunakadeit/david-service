@@ -16,15 +16,19 @@
     "test": "jest"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "bluebird": "^3.7.2",
     "css-loader": "^3.4.2",
     "express": "^4.17.1",
     "lodash": "^4.17.15",
+    "mocha": "^7.1.1",
     "mysql": "^2.18.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "style-loader": "^1.1.3",
-    "webpack": "^4.42.0"
+    "supertest": "^4.0.2",
+    "webpack": "^4.42.0",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
@@ -41,6 +45,9 @@
     "webpack-cli": "^3.3.11"
   },
   "jest": {
+    "setupFiles": [
+      "<rootDir>/global-mocks.js"
+    ],
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy"
     }

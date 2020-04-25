@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nike Description Service</title>
     
 </head>
 <body>
@@ -19,9 +19,11 @@
         var productId = path[2]; 
         var styleId = path[3]; 
 
+        var productInfo = {name: 'Nike Blazer'};
+        var styleInfo = {name: 'Blue/Green', price_sale: 100, thumb: 'https://static.nike.com/a/images/t_default/eric5lwitzffpoisq0rj/blazer-mid-77-vintage-shoe-flCCX4.jpg'};
         
         ReactDOM.render(
-            React.createElement(Description, { productId }),
+            React.createElement(Description, { productId, productInfo, styleInfo } ),
             document.getElementById('root')
         )
     </script>

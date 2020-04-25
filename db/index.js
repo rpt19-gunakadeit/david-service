@@ -5,9 +5,9 @@ const Promise = require('bluebird');
 
 
 var db = mysql.createConnection({
-    user: 'root',
-    password: 'pw',
-    database: 'nike_inventory'
+    user: 'nodeuser',
+    password: 'nodeuser@1234',
+    database: 'nike'
 })
 
 db =  Promise.promisifyAll(db);

@@ -10,15 +10,13 @@ class Description extends React.Component {
             styleName: this.props.styleInfo.name,
             productDescription: '',
             textBlock: '',
-            productPrice: 100, //default for now
-            imageUrl: 'https://static.nike.com/a/images/t_default/eric5lwitzffpoisq0rj/blazer-mid-77-vintage-shoe-flCCX4.jpg',
+            productPrice: this.props.styleInfo.price_sale, 
+            imageUrl: this.props.styleInfo.thumb,
             modal: false
         }
         this.toggleModal = this.toggleModal.bind(this);
-        
     } 
 
-    
     componentDidMount() {
         
         fetch(`http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:5000/product/${this.state.productId}/description/`,
@@ -27,40 +25,14 @@ class Description extends React.Component {
             return response.json();
         })
         .then(data => {
-            console.log('data', data);
             this.setState({
                 productDescription: data.description,
                 textBlock: data.textBlock
             })
-
-            // once I get Damien's API
-            // return fetch(`http://localhost:4000/${this.props.productId}/${this.props.style}`)
         })
-        // .then(response => {
-        //     return response.json();
-        // })
-        // .then(data => {
-        //     this.setState({
-        //         productName: data.productName,
-        //         styleName: data.styleName,
-        //         productPrice: data.productPrice
-        //     })
-        //      
-        //     once I get Abraham's API
-        //     return fetch(`http://localhost:3000/${this.props.productId}/${this.props.style})
-        // })
-        // .then(response => {
-        //     return response.json();
-        // })
-        // .then(data => {
-        //     this.setState({
-        //         imageUrl: data.imageUrl
-        //     })
-        // })
         .catch(error => {
             console.error(err);
         })
-
     }
 
     toggleModal() {
@@ -95,6 +67,5 @@ class Description extends React.Component {
 
 }
 
-
-
 window.Description = Description;
+export default Description;
