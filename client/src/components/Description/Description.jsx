@@ -58,7 +58,7 @@ class Description extends React.Component {
                     productName={this.state.productName}
                     productPrice={this.state.productPrice}
                     toggleModal={this.toggleModal}
-                    imageUrl = {this.state.imageUrl}
+                    imageUrl = {this.props.styleInfo.thumb}
                     modal={this.state.modal}/>    
                 
             </div>
