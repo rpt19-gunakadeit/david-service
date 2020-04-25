@@ -55,8 +55,8 @@ class Description extends React.Component {
     
                 <ReadMoreModal 
                     textBlock={this.state.textBlock}
-                    productName={this.state.productName}
-                    productPrice={this.state.productPrice}
+                    productName={this.props.productInfo.name}
+                    productPrice={this.props.styleInfo.price_sale}
                     toggleModal={this.toggleModal}
                     imageUrl = {this.props.styleInfo.thumb}
                     modal={this.state.modal}/>    
