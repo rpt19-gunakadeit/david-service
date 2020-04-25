@@ -109,3 +109,17 @@ button {
   text-align: center;
   font-weight: 500;
 }
+
+#product-description {
+  line-height: 1.75;
+}
+
+#details {
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+
+#details > li {
+  margin-left: 16px;
+  margin-bottom: 4px;
+}

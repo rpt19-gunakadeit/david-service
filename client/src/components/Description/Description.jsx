@@ -46,8 +46,8 @@ class Description extends React.Component {
         return (
             <div>
 
-                <p>{this.state.productDescription}</p>
-                <ul>
+                <p id="product-description">{this.state.productDescription}</p>
+                <ul id="details">
                     <li>Shown: {this.props.productInfo.name}</li>
                     <li>Style: {this.props.styleInfo.name}</li>
                 </ul>
