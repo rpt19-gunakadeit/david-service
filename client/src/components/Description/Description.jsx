@@ -19,7 +19,7 @@ class Description extends React.Component {
 
     componentDidMount() {
         
-        fetch(`http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:5000/product/${this.state.productId}/description/`,
+        fetch(`http://18.144.38.149:5000/product/${this.state.productId}/description/`,
         { 'Content-Type': 'text/plain'})
         .then(response => {
             return response.json();
