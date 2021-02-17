@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/rpt19-gunakadeit/david-proxy
+  - https://github.com/rpt19-gunakadeit/abraham-productDisplay
+  - https://github.com/rpt19-gunakadeit/damien-styles-and-inventory
+  - https://github.com/rpt19-gunakadeit/Rebekah-Reviews-service
 
 ## Table of Contents
 
@@ -17,7 +17,7 @@
 
 ## Usage
 
-> The descriptions render based on the product ID listed in the url. To display the descriptions, please query the product ID as follows: http://HOSTNAME:3000/descriptions/ID
+> The descriptions render based on the product ID listed in the url. To display the descriptions, please query the product ID as follows: http://HOSTNAME:3000/product/:id/description
 
 
 ## Development
