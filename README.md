@@ -1,6 +1,6 @@
-# Project Name
+# Nike Product Page - Description Service
 
-> Project description
+> This is the service for displaying the description component on the Nike product mock page
 
 ## Related Projects
 
@@ -17,14 +17,8 @@
 
 ## Usage
 
-> Some usage instructions
+> The descriptions render based on the product ID listed in the url. To display the descriptions, please query the product ID as follows: http://HOSTNAME:3000/descriptions/ID
 
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
 
 ## Development
 
@@ -33,7 +27,26 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 From within the root directory:
 
 ```sh
-npm install -g webpack
 npm install
+npm run seedDB
+npm run startDB
+npm run build
+npm run start
 ```
+## Tech Stack
+
+- HTML, CSS, JavaScript
+- ReactJS
+- NodeJS
+- Express
+- MySQL
+- Webpack
+- Babel
+- Jest
+- Enzyme
+- SuperTest
+- AWS (EC2)
+
+## Copyright and License
+The MIT License (MIT) [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
 
